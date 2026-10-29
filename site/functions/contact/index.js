@@ -107,11 +107,6 @@ export async function onRequestPost(context) {
   return json({ ok: true });
 }
 
-// Non-POST methods get a friendly 405
-export async function onRequest(context) {
-  return json({ ok: false, error: 'Use POST to submit the contact form.' }, 405);
-}
-
 function json(obj, status) {
   return new Response(JSON.stringify(obj), {
     status,
